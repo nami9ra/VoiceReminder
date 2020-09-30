@@ -73,6 +73,18 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.98431372549999996" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iai-11-t00">
+                                <rect key="frame" x="172" y="263" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="♪"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WU-s7-NA1">
+                                <rect key="frame" x="133" y="174" width="108" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="I8n-D9-rTN"/>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.98431372549019602" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -81,6 +93,8 @@
                     <connections>
                         <outlet property="backButton" destination="tGj-Z7-exQ" id="Fo8-YO-Nhd"/>
                         <outlet property="baseView" destination="LpF-yh-oWa" id="d6N-Gq-C4y"/>
+                        <outlet property="label" destination="6WU-s7-NA1" id="KIh-Lo-J9h"/>
+                        <outlet property="playButton" destination="iai-11-t00" id="wUp-3o-ELp"/>
                         <outlet property="recordButton" destination="nNg-ef-64R" id="3Go-Fd-kIS"/>
                     </connections>
                 </viewController>
