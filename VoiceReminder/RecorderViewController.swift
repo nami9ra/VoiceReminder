@@ -93,7 +93,7 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
     func getURL() -> URL{
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let docsDirect = paths[0]
-        let url = docsDirect.appendingPathComponent("recording.m4a")//ここの文字列は日付などにして変える
+        let url = docsDirect.appendingPathComponent("recording.m4a")//文字列を日付などにして変える
         return url
     }
     
