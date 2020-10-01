@@ -77,6 +77,9 @@
                                 <rect key="frame" x="172" y="263" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="♪"/>
+                                <connections>
+                                    <action selector="play" destination="8LE-H9-pbk" eventType="touchUpInside" id="iOZ-ta-CCm"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WU-s7-NA1">
                                 <rect key="frame" x="133" y="174" width="108" height="21"/>

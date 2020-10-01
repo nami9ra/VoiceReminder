@@ -97,6 +97,23 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
         return url
     }
     
+    @IBAction func play(){
+        if !isPlaying{
+            audioPlayer = try! AVAudioPlayer(contentsOf: getURL())
+            audioPlayer.delegate = self
+            audioPlayer.play()
+            
+            isPlaying = true
+            label.text = "再生"
+            recordButton.isEnabled = false
+        }else{
+            audioPlayer.stop()
+            isPlaying = false
+            label.text = "待機中"
+            recordButton.isEnabled = true
+        }
+    }
+    
     
     
     /*
