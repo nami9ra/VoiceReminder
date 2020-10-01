@@ -39,7 +39,7 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
     }
     
     @IBAction func recordButtonTapped(_ sender: Any){
-        if  isRecording{
+        if  !isRecording{
             UIView.animate(withDuration: 0.2){
                 self.StartButton()
             }
@@ -87,6 +87,7 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
             isRecording = false
             label.text = "待機中"
             playButton.isEnabled = true
+            self.performSegue(withIdentifier: "toDetails", sender: nil)
         }
     }
     
