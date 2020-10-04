@@ -17,17 +17,38 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VoiceReminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUa-uw-g8A">
-                                <rect key="frame" x="164.5" y="587" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUa-uw-g8A">
+                                <rect key="frame" x="164" y="617" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="addButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="dU7-cX-91U"/>
                                     <segue destination="8LE-H9-pbk" kind="show" id="ubQ-KN-eSJ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSC-Vx-AwA">
+                                <rect key="frame" x="68" y="290" width="239" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Qt-qS-A6K">
+                                <rect key="frame" x="65" y="98" width="239" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7V-HA-k2W">
+                                <rect key="frame" x="65" y="445" width="239" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.98431372549019602" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -36,11 +57,15 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vUa-uw-g8A" secondAttribute="bottom" constant="50" id="m29-OY-SQS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Lnf-Le-oCB"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="7Qt-qS-A6K" id="SJV-Dh-Rhq"/>
+                        <outlet property="memoLabel" destination="M7V-HA-k2W" id="wq9-cz-uy1"/>
+                        <outlet property="timeLabel" destination="KSC-Vx-AwA" id="4EG-Si-j6D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-783" y="127"/>
+            <point key="canvasLocation" x="-788" y="128.18590704647679"/>
         </scene>
         <!--Title-->
         <scene sceneID="Qzm-hX-jyy">
@@ -104,7 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmt-gs-pq5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-815.20000000000005" y="968.36581709145435"/>
+            <point key="canvasLocation" x="-788" y="924"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="0d8-Gy-llQ">
@@ -119,25 +144,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="通知日程" id="RyA-7q-qd6">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="mou-sY-Bzz">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="RgZ-hM-Av6">
-                                                <rect key="frame" x="16" y="9.5" width="85" height="37"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="NotoSansJP-Regular" family="Noto Sans JP" pointSize="17"/>
-                                                <state key="normal" title="キャンセル">
-                                                    <color key="titleColor" red="0.12549019610000001" green="0.63921568630000003" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                            </button>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="IWI-cJ-VfC">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="pVT-aU-3gR">
-                                                <rect key="frame" x="325" y="9.5" width="34" height="37"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="NotoSansJP-Regular" family="Noto Sans JP" pointSize="17"/>
-                                                <state key="normal" title="保存">
-                                                    <color key="titleColor" red="0.12549019610000001" green="0.63921568630000003" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                            </button>
+                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="mou-sY-Bzz"/>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="IWI-cJ-VfC">
+                                            <connections>
+                                                <action selector="save" destination="mmU-W6-b0L" id="bsX-Jc-qf7"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -185,12 +196,14 @@
                     <navigationItem key="navigationItem" id="Rrh-3f-4eE"/>
                     <connections>
                         <outlet property="datePicker" destination="hgu-FU-cwL" id="a2l-3Z-Nmn"/>
+                        <outlet property="memoTextField" destination="GxE-G3-c1w" id="F9g-6d-GRj"/>
                         <outlet property="timePicker" destination="itp-KZ-6f1" id="NXX-Hj-ktj"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toView" id="pxK-LX-8Zg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="It1-Ah-wWB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-32.799999999999997" y="830.73463268365822"/>
+            <point key="canvasLocation" x="103" y="923"/>
         </scene>
     </scenes>
     <resources>

@@ -9,78 +9,49 @@ import UIKit
 
 class DetailsViewController: UIViewController{
     
-    /*
-    @IBOutlet weak var Dateation: UITextField!
-    @IBOutlet weak var Timeation: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker! //日付選択
+    @IBOutlet weak var timePicker: UIDatePicker! //時間選択
+    @IBOutlet var memoTextField: UITextField! //タイトル入力
 
-    let datePicker = UIDatePicker()
-    let timePicker = UIDatePicker()
-
+    
+    var saveData: UserDefaults = UserDefaults.standard
+    var stringDatetime: String!
+    var stringDatePicker: String!
+    var stringTimePicker: String!
+    
+    //最初からあるメソッド
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        createDatePicker()
     }
-
-    func createDatePicker(){
-
-        // DatePickerModeをDate(日付)に設定
-        datePicker.datePickerMode = .date
-        timePicker.datePickerMode = .time
-
-        // DatePickerを日本語化
-        datePicker.locale = NSLocale(localeIdentifier: "ja_JP") as Locale
-
-        // textFieldのinputViewにdatepickerを設定
-        Dateation.inputView = datePicker
-        Timeation.inputView = timePicker
-
-        // UIToolbarを設定
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-
-        // Doneボタンを設定(押下時doneClickedが起動)
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action:#selector(doneClicked))
-
-        // Doneボタンを追加
-        toolbar.setItems([doneButton], animated: true)
-
-        // FieldにToolbarを追加
-        Dateation.inputAccessoryView = toolbar
-        Timeation.inputAccessoryView = toolbar
+    
+    func getDatetime(){
+        let date: Date = Date() //現在の日付を取得
+        //日付のフォーマットを指定する
+        let format = DateFormatter()
+        format.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
+        //日付をString型に変換する
+        stringDatetime = format.string(from: date)
     }
-
-    @objc func doneClicked(){
-        let dateFormatter = DateFormatter()
-        let timeFormatter = DateFormatter()
-
-        // 持ってくるデータのフォーマットを設定
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
-        dateFormatter.locale    = NSLocale(localeIdentifier: "ja_JP") as Locale?
-        dateFormatter.dateStyle = DateFormatter.Style.medium
-        
-        timeFormatter.dateStyle = .none
-        timeFormatter.timeStyle = .medium
-        timeFormatter.locale    = NSLocale(localeIdentifier: "ja_JP") as Locale?
-        timeFormatter.dateStyle = DateFormatter.Style.medium
-
-        // textFieldに選択した日付を代入
-        Dateation.text = dateFormatter.string(from: datePicker.date)
-        Timeation.text = timeFormatter.string(from: timePicker.date)
-
-        // キーボードを閉じる
-        self.view.endEditing(true)
+    
+    func changeStringDate(){
+        let formatDate = DateFormatter()
+        let formatTime = DateFormatter()
+        formatDate.dateFormat = "yyyy年MM年dd日"
+        formatTime.dateFormat = "HH:mm"
+        stringDatePicker = formatDate.string(from: datePicker.date)
+        stringTimePicker = formatTime.string(from: timePicker.date)
     }
- */
     
-    
-    @IBOutlet weak var datePicker: UIDatePicker!
-    
-    @IBOutlet weak var timePicker: UIDatePicker!
-    
-        //最初からあるメソッド
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func save(){
+        //メモが空白なら現在の日時をメモにする
+        if memoTextField.text == ""{
+            getDatetime()
+            memoTextField.text = stringDatetime
+        }
+        changeStringDate()
+        saveData.set(stringDatePicker, forKey: "date")
+        saveData.set(stringTimePicker, forKey: "time")
+        saveData.set(memoTextField.text, forKey: "memo")
+        self.performSegue(withIdentifier: "toView", sender: nil)
     }
 }

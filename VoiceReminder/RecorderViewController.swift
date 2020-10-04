@@ -24,6 +24,8 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
     var audioPlayer: AVAudioPlayer! //再生
     var isRecording = false //録音状態か判別
     var isPlaying = false //再生状態か判断
+    var stringDate: String! //String型の日付
+    var reconame: String! //録音した音声の保存名前
     
     override func viewDidLoad() {
         width = baseView.frame.size.width
@@ -91,10 +93,21 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
         }
     }
     
+    func getDate(){
+        let date: Date = Date() //現在の日付を取得
+        //日付のフォーマットを指定する
+        let format = DateFormatter()
+        format.dateFormat = "yyyy/MM/ddHH:mm:ss"
+        //日付をString型に変換する
+        stringDate = format.string(from: date)
+        reconame = stringDate + ".m4a"
+    }
+    
     func getURL() -> URL{
+        getDate()
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let docsDirect = paths[0]
-        let url = docsDirect.appendingPathComponent("recording.m4a")//文字列を日付などにして変える
+        let url = docsDirect.appendingPathComponent("reconame.m4a")//文字列を日付などにして変える
         return url
     }
     
