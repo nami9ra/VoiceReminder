@@ -97,7 +97,7 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
         let date: Date = Date() //現在の日付を取得
         //日付のフォーマットを指定する
         let format = DateFormatter()
-        format.dateFormat = "yyyy/MM/ddHH:mm:ss"
+        format.dateFormat = "yyyyMMddHHmmss"
         //日付をString型に変換する
         stringDate = format.string(from: date)
         reconame = stringDate + ".m4a"
@@ -107,7 +107,7 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
         getDate()
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let docsDirect = paths[0]
-        let url = docsDirect.appendingPathComponent("reconame.m4a")//文字列を日付などにして変える
+        let url = docsDirect.appendingPathComponent(reconame)//文字列を日付などにして変える
         return url
     }
     

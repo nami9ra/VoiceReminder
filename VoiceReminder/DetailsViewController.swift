@@ -33,6 +33,7 @@ class DetailsViewController: UIViewController{
         stringDatetime = format.string(from: date)
     }
     
+    //DatePickerの値をString型に変更
     func changeStringDate(){
         let formatDate = DateFormatter()
         let formatTime = DateFormatter()
@@ -49,6 +50,7 @@ class DetailsViewController: UIViewController{
             memoTextField.text = stringDatetime
         }
         changeStringDate()
+        saveData.set(datePicker.date, forKey: "dateDate")
         saveData.set(stringDatePicker, forKey: "date")
         saveData.set(stringTimePicker, forKey: "time")
         saveData.set(memoTextField.text, forKey: "memo")
