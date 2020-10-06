@@ -95,7 +95,7 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
             label.text = "待機中録音"
             try! session.setActive(false)
             playButton.isEnabled = true
-            //self.performSegue(withIdentifier: "toDetails", sender: nil)
+            self.performSegue(withIdentifier: "toDetails", sender: nil)
         }
     }
     
@@ -120,7 +120,7 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
         let soundDirUrl = libraryUrl.appendingPathComponent("Sounds")
         try? FileManager.default.createDirectory(at: soundDirUrl, withIntermediateDirectories: true, attributes: nil)
         // あらかじめリストアップしておいたファイルから選んで${App}/Library/Soundsにコピー
-        let from =  URL(fileURLWithPath:"/System/Library/Audio/UISounds/Modern").appendingPathComponent("calendar_alert_chord.caf")
+        let from =  URL(fileURLWithPath:"/System/Library/Audio/UISounds/Modern").appendingPathComponent(reconame)
         dest = soundDirUrl.appendingPathComponent(reconame)
         try? FileManager.default.copyItem(at: from, to: dest)
         saveData.set(dest, forKey: "music")

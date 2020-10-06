@@ -83,7 +83,7 @@ class DetailsViewController: UIViewController{
         
         content.title = "VoiceReminder"
         content.body = saveData.object(forKey: "memo") as! String
-        content.sound = UNNotificationSound.default
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "calendar_alert_chord.caf"))
         
         //すぐに通知を表示
         request = UNNotificationRequest(
