@@ -61,7 +61,7 @@ class DetailsViewController: UIViewController{
         tsuchi()
         let center = UNUserNotificationCenter.current()
         center.add(request)
-        //self.performSegue(withIdentifier: "toView", sender: nil)
+        self.performSegue(withIdentifier: "toView", sender: nil)
     }
     
     func tsuchi(){
@@ -83,9 +83,9 @@ class DetailsViewController: UIViewController{
         
         content.title = "VoiceReminder"
         content.body = saveData.object(forKey: "memo") as! String
-        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "calendar_alert_chord.caf"))
-        
-        //すぐに通知を表示
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: voiceFile.absoluteString)
+                                            
+        )   //すぐに通知を表示
         request = UNNotificationRequest(
             identifier: "CalendarNotification",
             content: content,

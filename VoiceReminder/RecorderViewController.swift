@@ -7,6 +7,9 @@
 
 import UIKit
 import AVFoundation
+
+var voiceFile: URL!
+
 class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate{
     
     //画面サイズ取得
@@ -19,16 +22,16 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
     @IBOutlet var label: UILabel!
     @IBOutlet var playButton: UIButton!
     @IBOutlet var test: UILabel!
+    @IBOutlet var test2: UILabel!
     
     var audioRecorder: AVAudioRecorder! //レコーダ
     var audioPlayer: AVAudioPlayer! //再生
     var isRecording = false //録音状態か判別
     var isPlaying = false //再生状態か判断
     var stringDate: String! //String型の日付
-    var reconame: String! //録音した音声の保存名前
+    var recordName: String! //録音した音声の保存名前
     var check: Int = 0
     var saveData: UserDefaults = UserDefaults.standard
-    var dest: URL!
     
     let session = AVAudioSession.sharedInstance()
     
@@ -82,7 +85,7 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
             ]
             check = 0
             createDir()
-            audioRecorder = try! AVAudioRecorder(url: dest, settings: settings)
+            audioRecorder = try! AVAudioRecorder(url: voiceFile, settings: settings)
             audioRecorder.delegate = self
             audioRecorder.record()
             
@@ -109,26 +112,26 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
             stringDate = format.string(from: date)
         }
         check = 1
-        reconame = stringDate + ".m4a"
-        test.text = reconame
+        recordName = stringDate + ".m4a"
+        test.text = recordName
     }
-    
+
     func createDir(){
         //ファイル作成
         getDate()
         let libraryUrl = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
         let soundDirUrl = libraryUrl.appendingPathComponent("Sounds")
         try? FileManager.default.createDirectory(at: soundDirUrl, withIntermediateDirectories: true, attributes: nil)
-        // あらかじめリストアップしておいたファイルから選んで${App}/Library/Soundsにコピー
-        let from =  URL(fileURLWithPath:"/System/Library/Audio/UISounds/Modern").appendingPathComponent(reconame)
-        dest = soundDirUrl.appendingPathComponent(reconame)
-        try? FileManager.default.copyItem(at: from, to: dest)
-        saveData.set(dest, forKey: "music")
+        //Soundsファイルの中に音声ファイルを作成
+        voiceFile = soundDirUrl.appendingPathComponent(recordName)
+        test.text = voiceFile!.absoluteString
+        saveData.set(voiceFile, forKey: "music")
+        test2.text = saveData.object(forKey: "music") as! String
     }
     
     @IBAction func play(){
         if !isPlaying{
-            audioPlayer = try! AVAudioPlayer(contentsOf: dest)
+            audioPlayer = try! AVAudioPlayer(contentsOf: voiceFile)
             audioPlayer.delegate = self
             audioPlayer.play()
             
