@@ -49,15 +49,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U44-ks-PIx">
-                                <rect key="frame" x="259" y="405" width="85" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="通知"/>
-                                <connections>
-                                    <action selector="localpush:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rqO-mX-a5B"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.98431372549019602" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -70,7 +61,6 @@
                         <outlet property="dateLabel" destination="7Qt-qS-A6K" id="SJV-Dh-Rhq"/>
                         <outlet property="memoLabel" destination="M7V-HA-k2W" id="wq9-cz-uy1"/>
                         <outlet property="timeLabel" destination="KSC-Vx-AwA" id="4EG-Si-j6D"/>
-                        <outlet property="tsutiButton" destination="U44-ks-PIx" id="121-ZL-vyQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
