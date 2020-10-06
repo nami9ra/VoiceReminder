@@ -7,7 +7,6 @@
 
 import UIKit
 import AVFoundation
-
 class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate{
     
     //画面サイズ取得
@@ -19,6 +18,7 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
     @IBOutlet var baseView: UIView!
     @IBOutlet var label: UILabel!
     @IBOutlet var playButton: UIButton!
+    @IBOutlet var test: UILabel!
     
     var audioRecorder: AVAudioRecorder! //レコーダ
     var audioPlayer: AVAudioPlayer! //再生
@@ -26,6 +26,9 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
     var isPlaying = false //再生状態か判断
     var stringDate: String! //String型の日付
     var reconame: String! //録音した音声の保存名前
+    var check: Int = 0
+    
+    let session = AVAudioSession.sharedInstance()
     
     override func viewDidLoad() {
         width = baseView.frame.size.width
@@ -66,7 +69,6 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
     
     func record(){
         if  !isRecording{
-            let session = AVAudioSession.sharedInstance()
             try! session.setCategory(AVAudioSession.Category.playAndRecord)
             try! session.setActive(true)
             
@@ -76,7 +78,7 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
                 AVNumberOfChannelsKey: 2,
                 AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
             ]
-            
+            check = 0
             audioRecorder = try! AVAudioRecorder(url: getURL(), settings: settings)
             audioRecorder.delegate = self
             audioRecorder.record()
@@ -87,20 +89,25 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
         }else{
             audioRecorder.stop()
             isRecording = false
-            label.text = "待機中"
+            label.text = "待機中録音"
+            try! session.setActive(false)
             playButton.isEnabled = true
-            self.performSegue(withIdentifier: "toDetails", sender: nil)
+            //self.performSegue(withIdentifier: "toDetails", sender: nil)
         }
     }
     
     func getDate(){
-        let date: Date = Date() //現在の日付を取得
-        //日付のフォーマットを指定する
-        let format = DateFormatter()
-        format.dateFormat = "yyyyMMddHHmmss"
-        //日付をString型に変換する
-        stringDate = format.string(from: date)
+        if check == 0{
+            let date: Date = Date() //現在の日付を取得
+            //日付のフォーマットを指定する
+            let format = DateFormatter()
+            format.dateFormat = "yyyyMMddHHmmss"
+            //日付をString型に変換する
+            stringDate = format.string(from: date)
+        }
+        check = 1
         reconame = stringDate + ".m4a"
+        test.text = reconame
     }
     
     func getURL() -> URL{
@@ -110,6 +117,23 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
         let url = docsDirect.appendingPathComponent(reconame)//文字列を日付などにして変える
         return url
     }
+    /*
+    func soundLibrary() -> Bool{
+        let libraryUrl = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
+        let soundDirUrl = libraryUrl.appendingPathComponent("Sounds")
+        try? FileManager.default.createDirectory(at: soundDirUrl, withIntermediateDirectories: true, attributes: nil)
+        // あらかじめリストアップしておいたファイルから選んで${App}/Library/Soundsにコピー
+        do {
+                let from =  URL(fileURLWithPath:"/System/Library/Audio/UISounds/Modern").appendingPathComponent("calendar_alert_chord.caf")
+                let dest = soundDirUrl.appendingPathComponent(file)
+                try FileManager.default.copyItem(at: from, to: dest)
+        }catch{
+                //log.error(error)
+                return false
+        }
+        return true
+    }
+ */
     
     @IBAction func play(){
         if !isPlaying{
@@ -125,7 +149,7 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
             isPlaying = false
             label.text = "待機中"
             recordButton.isEnabled = true
-        }
+ 
     }
     
     
@@ -139,5 +163,5 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
         // Pass the selected object to the new view controller.
     }
     */
-
+    }
 }

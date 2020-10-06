@@ -99,7 +99,7 @@
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.98431372549999996" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iai-11-t00">
-                                <rect key="frame" x="172" y="263" width="30" height="30"/>
+                                <rect key="frame" x="172" y="263" width="61" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="♪"/>
                                 <connections>
@@ -108,6 +108,13 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WU-s7-NA1">
                                 <rect key="frame" x="133" y="174" width="108" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5i7-Yn-DJk">
+                                <rect key="frame" x="93" y="446" width="224" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -124,12 +131,13 @@
                         <outlet property="label" destination="6WU-s7-NA1" id="KIh-Lo-J9h"/>
                         <outlet property="playButton" destination="iai-11-t00" id="wUp-3o-ELp"/>
                         <outlet property="recordButton" destination="nNg-ef-64R" id="3Go-Fd-kIS"/>
+                        <outlet property="test" destination="5i7-Yn-DJk" id="Gyr-9Q-tbb"/>
                         <segue destination="mmU-W6-b0L" kind="presentation" identifier="toDetails" id="IJO-0O-l97"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmt-gs-pq5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-788" y="924"/>
+            <point key="canvasLocation" x="-788" y="923.38830584707648"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="0d8-Gy-llQ">

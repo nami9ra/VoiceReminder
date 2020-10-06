@@ -61,7 +61,7 @@ class DetailsViewController: UIViewController{
         tsuchi()
         let center = UNUserNotificationCenter.current()
         center.add(request)
-        self.performSegue(withIdentifier: "toView", sender: nil)
+        //self.performSegue(withIdentifier: "toView", sender: nil)
     }
     
     func tsuchi(){
@@ -80,6 +80,7 @@ class DetailsViewController: UIViewController{
         
         //通知コンテンツの作成
         let content = UNMutableNotificationContent()
+        
         content.title = "VoiceReminder"
         content.body = saveData.object(forKey: "memo") as! String
         content.sound = UNNotificationSound.default
