@@ -27,6 +27,8 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
     var stringDate: String! //String型の日付
     var reconame: String! //録音した音声の保存名前
     var check: Int = 0
+    var saveData: UserDefaults = UserDefaults.standard
+    var dest: URL!
     
     let session = AVAudioSession.sharedInstance()
     
@@ -79,7 +81,8 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
                 AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
             ]
             check = 0
-            audioRecorder = try! AVAudioRecorder(url: getURL(), settings: settings)
+            createDir()
+            audioRecorder = try! AVAudioRecorder(url: dest, settings: settings)
             audioRecorder.delegate = self
             audioRecorder.record()
             
@@ -110,34 +113,22 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate, AVAudio
         test.text = reconame
     }
     
-    func getURL() -> URL{
+    func createDir(){
+        //ファイル作成
         getDate()
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let docsDirect = paths[0]
-        let url = docsDirect.appendingPathComponent(reconame)//文字列を日付などにして変える
-        return url
-    }
-    /*
-    func soundLibrary() -> Bool{
         let libraryUrl = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
         let soundDirUrl = libraryUrl.appendingPathComponent("Sounds")
         try? FileManager.default.createDirectory(at: soundDirUrl, withIntermediateDirectories: true, attributes: nil)
         // あらかじめリストアップしておいたファイルから選んで${App}/Library/Soundsにコピー
-        do {
-                let from =  URL(fileURLWithPath:"/System/Library/Audio/UISounds/Modern").appendingPathComponent("calendar_alert_chord.caf")
-                let dest = soundDirUrl.appendingPathComponent(file)
-                try FileManager.default.copyItem(at: from, to: dest)
-        }catch{
-                //log.error(error)
-                return false
-        }
-        return true
+        let from =  URL(fileURLWithPath:"/System/Library/Audio/UISounds/Modern").appendingPathComponent("calendar_alert_chord.caf")
+        dest = soundDirUrl.appendingPathComponent(reconame)
+        try? FileManager.default.copyItem(at: from, to: dest)
+        saveData.set(dest, forKey: "music")
     }
- */
     
     @IBAction func play(){
         if !isPlaying{
-            audioPlayer = try! AVAudioPlayer(contentsOf: getURL())
+            audioPlayer = try! AVAudioPlayer(contentsOf: dest)
             audioPlayer.delegate = self
             audioPlayer.play()
             
