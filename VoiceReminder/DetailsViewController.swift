@@ -19,10 +19,13 @@ class DetailsViewController: UIViewController{
     var stringTimePicker: String!
     var request: UNNotificationRequest!
     let calendar: Calendar = Calendar(identifier: .gregorian)
+    var voiceFile: URL!
+    var recordName: String!
     
     //最初からあるメソッド
     override func viewDidLoad() {
         super.viewDidLoad()
+        voiceFile = saveData.object(forKey: "music") as? URL
     }
     
     func getDatetime(){
@@ -80,10 +83,10 @@ class DetailsViewController: UIViewController{
         
         //通知コンテンツの作成
         let content = UNMutableNotificationContent()
-        
+        recordName = saveData.object(forKey: "recordName") as? String
         content.title = "VoiceReminder"
         content.body = saveData.object(forKey: "memo") as! String
-        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: voiceFile.absoluteString)
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: recordName)
                                             
         )   //すぐに通知を表示
         request = UNNotificationRequest(

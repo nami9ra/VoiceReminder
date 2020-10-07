@@ -6,15 +6,13 @@
 //
 
 import UIKit
-import AVFoundation
 
-class ViewController: UIViewController,AVAudioPlayerDelegate{
+class ViewController: UIViewController{
     
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var memoLabel: UILabel!
     @IBOutlet var playButton: UIButton!
-    var audioPlayer: AVAudioPlayer! //再生
    
     var saveData: UserDefaults = UserDefaults.standard
    
@@ -28,12 +26,6 @@ class ViewController: UIViewController,AVAudioPlayerDelegate{
     
     @IBAction func addButton(){
         
-    }
-    
-    @IBAction func play2(){
-        audioPlayer = try! AVAudioPlayer(contentsOf: voiceFile)
-        audioPlayer.delegate = self
-        audioPlayer.play()
     }
 }
 

@@ -43,20 +43,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7V-HA-k2W">
-                                <rect key="frame" x="0.0" y="445" width="375" height="86"/>
+                                <rect key="frame" x="68" y="440" width="273" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rt1-li-bbM">
-                                <rect key="frame" x="237" y="514" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="♪"/>
-                                <connections>
-                                    <action selector="play2" destination="BYZ-38-t0r" eventType="touchUpInside" id="pND-iN-yJt"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.98431372549019602" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -68,7 +60,6 @@
                     <connections>
                         <outlet property="dateLabel" destination="7Qt-qS-A6K" id="SJV-Dh-Rhq"/>
                         <outlet property="memoLabel" destination="M7V-HA-k2W" id="wq9-cz-uy1"/>
-                        <outlet property="playButton" destination="Rt1-li-bbM" id="WQP-Rk-SIo"/>
                         <outlet property="timeLabel" destination="KSC-Vx-AwA" id="4EG-Si-j6D"/>
                     </connections>
                 </viewController>
@@ -79,6 +70,7 @@
         <!--Title-->
         <scene sceneID="Qzm-hX-jyy">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dmt-gs-pq5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="8LE-H9-pbk" customClass="RecorderViewController" customModule="VoiceReminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sgz-Ir-hCa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
@@ -107,32 +99,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.98431372549999996" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iai-11-t00">
-                                <rect key="frame" x="172" y="263" width="61" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="♪"/>
-                                <connections>
-                                    <action selector="play" destination="8LE-H9-pbk" eventType="touchUpInside" id="iOZ-ta-CCm"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WU-s7-NA1">
                                 <rect key="frame" x="133" y="174" width="108" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5i7-Yn-DJk">
-                                <rect key="frame" x="16" y="368" width="360" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="5"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTi-BP-eZ0">
-                                <rect key="frame" x="16" y="444" width="360" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="5"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -145,21 +115,17 @@
                         <outlet property="backButton" destination="tGj-Z7-exQ" id="Fo8-YO-Nhd"/>
                         <outlet property="baseView" destination="LpF-yh-oWa" id="d6N-Gq-C4y"/>
                         <outlet property="label" destination="6WU-s7-NA1" id="KIh-Lo-J9h"/>
-                        <outlet property="playButton" destination="iai-11-t00" id="wUp-3o-ELp"/>
                         <outlet property="recordButton" destination="nNg-ef-64R" id="3Go-Fd-kIS"/>
-                        <outlet property="test" destination="5i7-Yn-DJk" id="Gyr-9Q-tbb"/>
-                        <outlet property="test2" destination="aTi-BP-eZ0" id="rof-4h-ypc"/>
                         <segue destination="mmU-W6-b0L" kind="presentation" identifier="toDetails" id="IJO-0O-l97"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dmt-gs-pq5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-788" y="923.38830584707648"/>
+            <point key="canvasLocation" x="-1028" y="922"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="0d8-Gy-llQ">
             <objects>
-                <viewController id="mmU-W6-b0L" customClass="DetailsViewController" customModule="VoiceReminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="mmU-W6-b0L" customClass="DetailsViewController" customModule="VoiceReminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BUD-UP-Tnc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -169,7 +135,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="通知日程" id="RyA-7q-qd6">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="mou-sY-Bzz"/>
+                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="mou-sY-Bzz">
+                                            <connections>
+                                                <segue destination="8LE-H9-pbk" kind="presentation" id="uee-0f-2D1"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="IWI-cJ-VfC">
                                             <connections>
                                                 <action selector="save" destination="mmU-W6-b0L" id="bsX-Jc-qf7"/>
@@ -231,6 +201,9 @@
             <point key="canvasLocation" x="103" y="923"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ubQ-KN-eSJ"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="write2.png" width="891" height="166"/>
     </resources>
