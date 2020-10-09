@@ -14,8 +14,7 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate{
     var width: CGFloat = 0
     var height: CGFloat = 0
     
-    @IBOutlet weak var recordButton: UIButton!
-    @IBOutlet var baseView: UIView!
+    @IBOutlet var recordButton: UIButton!
     @IBOutlet var label: UILabel!
     
     var audioRecorder: AVAudioRecorder! //レコーダ
@@ -30,40 +29,24 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate{
     let session = AVAudioSession.sharedInstance()
     
     override func viewDidLoad() {
-        width = baseView.frame.size.width
-        height = baseView.frame.size.height
-        
+        recordButton.setImage(UIImage(named: "stop.png"), for: .normal)
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        StartButton()
+        recordButton.setImage(UIImage(named: "stop.png"), for: .normal)
     }
     
     @IBAction func recordButtonTapped(_ sender: Any){
         if  !isRecording{
-            UIView.animate(withDuration: 0.2){
-                self.StartButton()
-            }
+            recordButton.setImage(UIImage(named: "start.png"), for: .normal)
+            record()
         }else{
-            UIView.animate(withDuration: 0.2){
-                self.StopButton()
-            }
+            recordButton.setImage(UIImage(named: "stop.png"), for: .normal)
+            record()
         }
-    }
-    
-    func StartButton(){
-        recordButton.frame = CGRect(x: (width-100)/2, y: (height-100)/2, width: 100, height: 100)
-        recordButton.layer.cornerRadius = 50
-        record()
-    }
-    
-    func StopButton(){
-        recordButton.frame = CGRect(x: (width-56)/2, y: (height-56)/2, width: 56, height: 56)
-        recordButton.layer.cornerRadius = 3.0
-        record()
     }
     
     func record(){

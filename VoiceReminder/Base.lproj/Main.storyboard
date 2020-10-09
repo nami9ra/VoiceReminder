@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUa-uw-g8A">
-                                <rect key="frame" x="161" y="580" width="46" height="30"/>
+                                <rect key="frame" x="144" y="549" width="87" height="60"/>
                                 <state key="normal" title="追加"/>
                                 <connections>
                                     <action selector="addButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="dU7-cX-91U"/>
@@ -84,21 +84,6 @@
                                     <color key="titleColor" red="0.12549019610000001" green="0.63921568630000003" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LpF-yh-oWa">
-                                <rect key="frame" x="0.0" y="475" width="375" height="172"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNg-ef-64R">
-                                        <rect key="frame" x="172" y="71" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.97647058823529409" green="0.29019607843137252" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="recordButtonTapped:" destination="8LE-H9-pbk" eventType="touchUpInside" id="hHQ-Dy-cmP"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.97647058819999999" green="0.98431372549999996" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WU-s7-NA1">
                                 <rect key="frame" x="133" y="174" width="108" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -106,6 +91,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNg-ef-64R">
+                                <rect key="frame" x="112" y="464" width="150" height="151"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="start.png"/>
+                                <connections>
+                                    <action selector="recordButtonTapped:" destination="8LE-H9-pbk" eventType="touchUpInside" id="hHQ-Dy-cmP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="I8n-D9-rTN"/>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.98431372549019602" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -118,16 +111,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="baseView" destination="LpF-yh-oWa" id="d6N-Gq-C4y"/>
                         <outlet property="label" destination="6WU-s7-NA1" id="KIh-Lo-J9h"/>
-                        <outlet property="recordButton" destination="nNg-ef-64R" id="3Go-Fd-kIS"/>
+                        <outlet property="recordButton" destination="nNg-ef-64R" id="Dig-IB-3pH"/>
                         <segue destination="mmU-W6-b0L" kind="show" identifier="toDetails" id="IJO-0O-l97"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmt-gs-pq5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="RpH-Ta-oVa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-802" y="921"/>
+            <point key="canvasLocation" x="-802.39999999999998" y="920.68965517241384"/>
         </scene>
         <!--通知日時-->
         <scene sceneID="0d8-Gy-llQ">
@@ -224,6 +216,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="start.png" width="300" height="302"/>
         <image name="write2.png" width="891" height="166"/>
     </resources>
 </document>
