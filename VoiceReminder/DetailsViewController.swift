@@ -64,7 +64,8 @@ class DetailsViewController: UIViewController{
         tsuchi()
         let center = UNUserNotificationCenter.current()
         center.add(request)
-        self.performSegue(withIdentifier: "toView", sender: nil)
+        self.dismiss(animated: true, completion: nil)
+
     }
     
     func tsuchi(){

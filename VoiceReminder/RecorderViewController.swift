@@ -15,7 +15,6 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate{
     var height: CGFloat = 0
     
     @IBOutlet weak var recordButton: UIButton!
-    @IBOutlet var backButton: UIButton!
     @IBOutlet var baseView: UIView!
     @IBOutlet var label: UILabel!
     

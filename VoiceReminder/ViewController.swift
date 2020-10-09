@@ -24,7 +24,18 @@ class ViewController: UIViewController{
         memoLabel.text = saveData.object(forKey: "memo") as? String
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        dateLabel.text = saveData.object(forKey: "date") as? String
+        timeLabel.text = saveData.object(forKey: "time") as? String
+        memoLabel.text = saveData.object(forKey: "memo") as? String
+    }
+    
     @IBAction func addButton(){
+        
+    }
+    
+    @IBAction func back(sender: UIStoryboardSegue){
         
     }
 }
