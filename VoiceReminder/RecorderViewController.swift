@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import NVActivityIndicatorView
 
 class RecorderViewController: UIViewController, AVAudioRecorderDelegate{
     
@@ -17,6 +18,7 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate{
     @IBOutlet var recordButton: UIButton!
     @IBOutlet var label: UILabel!
     
+    private var activityIndicatorView: NVActivityIndicatorView!
     var audioRecorder: AVAudioRecorder! //レコーダ
     var isRecording = false //録音状態か判別
     var isPlaying = false //再生状態か判断
@@ -31,7 +33,11 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate{
     override func viewDidLoad() {
         recordButton.setImage(UIImage(named: "stop.png"), for: .normal)
         super.viewDidLoad()
-
+        
+        activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 60, height: 60), type: NVActivityIndicatorType.lineScale, color: #colorLiteral(red: 0.1254901961, green: 0.6392156863, blue: 0.6196078431, alpha: 1), padding: 0)
+                activityIndicatorView.center = self.view.center // 位置を中心に設定
+                view.addSubview(activityIndicatorView)
+ 
         // Do any additional setup after loading the view.
     }
     
@@ -42,9 +48,11 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate{
     @IBAction func recordButtonTapped(_ sender: Any){
         if  !isRecording{
             recordButton.setImage(UIImage(named: "start.png"), for: .normal)
+            activityIndicatorView.startAnimating()
             record()
         }else{
             recordButton.setImage(UIImage(named: "stop.png"), for: .normal)
+            activityIndicatorView.stopAnimating()
             record()
         }
     }

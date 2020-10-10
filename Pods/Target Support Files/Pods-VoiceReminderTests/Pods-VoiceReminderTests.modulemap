@@ -1,0 +1,6 @@
+framework module Pods_VoiceReminderTests {
+  umbrella header "Pods-VoiceReminderTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
