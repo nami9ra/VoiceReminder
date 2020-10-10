@@ -16,7 +16,7 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate{
     var height: CGFloat = 0
     
     @IBOutlet var recordButton: UIButton!
-    @IBOutlet var label: UILabel!
+    //@IBOutlet var label: UILabel!
     
     private var activityIndicatorView: NVActivityIndicatorView!
     var audioRecorder: AVAudioRecorder! //レコーダ
@@ -34,7 +34,7 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate{
         recordButton.setImage(UIImage(named: "stop.png"), for: .normal)
         super.viewDidLoad()
         
-        activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 60, height: 60), type: NVActivityIndicatorType.lineScale, color: #colorLiteral(red: 0.1254901961, green: 0.6392156863, blue: 0.6196078431, alpha: 1), padding: 0)
+        activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 100, height: 100), type: NVActivityIndicatorType.lineScale, color: #colorLiteral(red: 0.9607843137, green: 0.1843137255, blue: 0.3411764706, alpha: 1), padding: 0)
                 activityIndicatorView.center = self.view.center // 位置を中心に設定
                 view.addSubview(activityIndicatorView)
  
@@ -75,11 +75,11 @@ class RecorderViewController: UIViewController, AVAudioRecorderDelegate{
             audioRecorder.record()
             
             isRecording = true
-            label.text = "録音中"
+            //label.text = "録音中"
         }else{
             audioRecorder.stop()
             isRecording = false
-            label.text = "待機中録音"
+            //label.text = "待機中録音"
             try! session.setActive(false)
             self.performSegue(withIdentifier: "toDetails", sender: nil)
         }

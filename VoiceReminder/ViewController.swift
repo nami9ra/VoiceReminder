@@ -19,9 +19,13 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        dateLabel.text = saveData.object(forKey: "date") as? String
-        timeLabel.text = saveData.object(forKey: "time") as? String
-        memoLabel.text = saveData.object(forKey: "memo") as? String
+        saveData.set("", forKey: "date")
+        saveData.set("", forKey: "time")
+        saveData.set("", forKey: "memo")
+        dateLabel.text = ""
+        timeLabel.text = ""
+        memoLabel.text = ""
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

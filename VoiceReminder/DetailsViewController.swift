@@ -26,6 +26,7 @@ class DetailsViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         voiceFile = saveData.object(forKey: "music") as? URL
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.1254901961, green: 0.6392156863, blue: 0.6196078431, alpha: 1)
     }
     
     func getDatetime(){
