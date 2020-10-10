@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		1147DBF92525B475006AAC4F /* NotoSansJP-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1147DBF22525B475006AAC4F /* NotoSansJP-Black.otf */; };
 		1155CBE12531294A00E32E32 /* start.png in Resources */ = {isa = PBXBuildFile; fileRef = 1155CBDF2531294A00E32E32 /* start.png */; };
 		1155CBE22531294A00E32E32 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 1155CBE02531294A00E32E32 /* stop.png */; };
+		1155CC042531389F00E32E32 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 1155CC032531389F00E32E32 /* add.png */; };
 		1171FAF1251A0C7300614A02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171FAF0251A0C7300614A02 /* AppDelegate.swift */; };
 		1171FAF3251A0C7300614A02 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171FAF2251A0C7300614A02 /* SceneDelegate.swift */; };
 		1171FAF5251A0C7300614A02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171FAF4251A0C7300614A02 /* ViewController.swift */; };
@@ -59,6 +60,7 @@
 		1147DBF22525B475006AAC4F /* NotoSansJP-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansJP-Black.otf"; sourceTree = "<group>"; };
 		1155CBDF2531294A00E32E32 /* start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start.png; sourceTree = "<group>"; };
 		1155CBE02531294A00E32E32 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
+		1155CC032531389F00E32E32 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		1171FAED251A0C7300614A02 /* VoiceReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1171FAF0251A0C7300614A02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1171FAF2251A0C7300614A02 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,7 +127,6 @@
 				2F6A00ECDBA4D255F5127D10 /* Pods-VoiceReminderTests.debug.xcconfig */,
 				382A4AAF1D7DBC06D6FEC25F /* Pods-VoiceReminderTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -172,6 +173,7 @@
 				1171FAF0251A0C7300614A02 /* AppDelegate.swift */,
 				1155CBDF2531294A00E32E32 /* start.png */,
 				1155CBE02531294A00E32E32 /* stop.png */,
+				1155CC032531389F00E32E32 /* add.png */,
 				1171FAF2251A0C7300614A02 /* SceneDelegate.swift */,
 				1171FAF6251A0C7300614A02 /* Main.storyboard */,
 				1171FAF9251A0C7500614A02 /* Assets.xcassets */,
@@ -328,6 +330,7 @@
 				1171FAFA251A0C7500614A02 /* Assets.xcassets in Resources */,
 				1196E52F252179D3003FF0E2 /* write2.png in Resources */,
 				1147DBF72525B475006AAC4F /* NotoSansJP-Bold.otf in Resources */,
+				1155CC042531389F00E32E32 /* add.png in Resources */,
 				1147DBF52525B475006AAC4F /* NotoSansJP-Light.otf in Resources */,
 				1147DBF42525B475006AAC4F /* NotoSansJP-Medium.otf in Resources */,
 				1171FAF8251A0C7300614A02 /* Main.storyboard in Resources */,

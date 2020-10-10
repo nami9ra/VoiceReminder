@@ -41,9 +41,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUa-uw-g8A">
-                                <rect key="frame" x="144" y="549" width="87" height="60"/>
-                                <state key="normal" title="追加"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUa-uw-g8A">
+                                <rect key="frame" x="112.5" y="467" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="34c-bG-pLU"/>
+                                    <constraint firstAttribute="width" constant="150" id="flp-hn-02j"/>
+                                </constraints>
+                                <state key="normal" image="add.png"/>
                                 <connections>
                                     <action selector="addButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="dU7-cX-91U"/>
                                     <segue destination="ma5-Kn-RjZ" kind="presentation" id="SB4-Za-EKW"/>
@@ -53,8 +57,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.98431372549019602" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vUa-uw-g8A" secondAttribute="bottom" constant="50" id="PEc-sB-JeP"/>
                             <constraint firstItem="vUa-uw-g8A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="apG-eQ-J7J"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vUa-uw-g8A" secondAttribute="bottom" constant="50" id="m29-OY-SQS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ofC-E9-fdE"/>
@@ -91,9 +95,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNg-ef-64R">
-                                <rect key="frame" x="112" y="464" width="150" height="151"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNg-ef-64R">
+                                <rect key="frame" x="112.5" y="467" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="bFN-im-b1P"/>
+                                    <constraint firstAttribute="width" constant="150" id="km5-dW-rw9"/>
+                                </constraints>
                                 <state key="normal" image="start.png"/>
                                 <connections>
                                     <action selector="recordButtonTapped:" destination="8LE-H9-pbk" eventType="touchUpInside" id="hHQ-Dy-cmP"/>
@@ -102,6 +109,10 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="I8n-D9-rTN"/>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.98431372549019602" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="I8n-D9-rTN" firstAttribute="bottom" secondItem="nNg-ef-64R" secondAttribute="bottom" constant="50" id="cey-ni-ff4"/>
+                            <constraint firstItem="nNg-ef-64R" firstAttribute="centerX" secondItem="Sgz-Ir-hCa" secondAttribute="centerX" id="qi8-sz-2F3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="録音" id="eSD-8v-nyH">
                         <barButtonItem key="leftBarButtonItem" title="キャンセル" id="gRV-bz-V6S">
@@ -216,6 +227,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add.png" width="300" height="302"/>
         <image name="start.png" width="300" height="302"/>
         <image name="write2.png" width="891" height="166"/>
     </resources>
